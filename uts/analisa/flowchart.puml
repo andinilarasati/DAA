@@ -1,0 +1,25 @@
+@startuml
+start
+:Mulai;
+:Pengguna login ke sistem;
+
+if (Peran pengguna?) then (Mahasiswa)
+    :Mahasiswa melihat halaman pendaftaran;
+    if (Mengisi formulir pendaftaran?) then (Ya)
+        :Mahasiswa melakukan pendaftaran;
+        :Status penerimaan;
+        :Mahasiswa logout;
+        stop
+    else (Tidak)
+        :Mahasiswa logout;
+        stop
+    endif
+
+else (Admin)
+    :Admin melihat daftar pendaftar;
+    :Admin menerima pendaftaran mahasiswa;
+    :Mahasiswa menerima notifikasi status penerimaan;
+    :Admin logout;
+    stop
+endif
+@enduml

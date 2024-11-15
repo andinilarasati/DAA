@@ -1,0 +1,24 @@
+@startuml
+actor Mahasiswa
+actor Admin
+
+usecase "Login ke Sistem" as UC_Login
+usecase "Melakukan Pendaftaran" as UC_Pendaftaran
+usecase "Lihat Status Penerimaan" as UC_LihatStatus
+usecase "Logout" as UC_Logout
+usecase "Lihat Daftar Pendaftar" as UC_LihatPendaftar
+usecase "Menerima Pendaftaran Mahasiswa" as UC_EvaluasiPenerimaan
+usecase "Kirim Notifikasi Status Penerimaan" as UC_KirimNotifikasi
+
+Mahasiswa --> UC_Login
+Mahasiswa --> UC_Pendaftaran
+Mahasiswa --> UC_LihatStatus
+Mahasiswa --> UC_Logout
+
+Admin --> UC_Login
+Admin --> UC_LihatPendaftar
+Admin --> UC_EvaluasiPenerimaan
+UC_EvaluasiPenerimaan --> UC_KirimNotifikasi
+Admin --> UC_Logout
+
+@enduml
