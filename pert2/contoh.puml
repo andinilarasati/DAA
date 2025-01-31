@@ -1,0 +1,12 @@
+@startuml
+
+package "Mahasiswa" #DDDDDD {
+  object <|-- ArrayList
+}
+
+package com.plantuml {
+  Object <|-- Demo1
+  Demo1 *- Demo2
+}
+
+@enduml

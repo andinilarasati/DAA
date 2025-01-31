@@ -1,0 +1,48 @@
+@startuml
+start
+
+:Registrasi dan Login;
+if (Apakah pengguna baru?) then (Ya)
+  :Pengguna mengisi data diri (nama, email, nomor telepon);
+  :Buat akun baru;
+else (Tidak)
+  :Pengguna login menggunakan email dan kata sandi;
+endif
+
+:Dashboard Pengguna;
+  :Tampilkan jumlah poin terkumpul;
+  :Tampilkan daftar sampah yang dilaporkan;
+  :Tampilkan informasi hadiah yang dapat ditukar;
+
+:Laporan Sampah;
+  :Pilih jenis sampah (botol plastik, kertas, dll);
+  :Unggah foto sampah;
+  :Pilih lokasi pengumpulan;
+  :Kirim laporan;
+  :Tunggu verifikasi;
+
+:Verifikasi Laporan;
+if (Apakah laporan valid?) then (Ya)
+  :Tambahkan poin ke akun pengguna;
+else (Tidak)
+  :Tolak laporan;
+endif
+
+:Pengumpulan Poin;
+  :Poin ditambahkan sesuai jenis dan jumlah sampah;
+
+:Tukar Poin;
+  :Pilih hadiah yang tersedia;
+  :Proses penukaran poin;
+
+:Riwayat Transaksi;
+  :Tampilkan riwayat laporan sampah;
+  :Tampilkan riwayat penukaran hadiah;
+
+:Notifikasi;
+  :Kirim notifikasi untuk laporan berhasil;
+  :Kirim notifikasi untuk poin terkumpul;
+  :Kirim notifikasi untuk penukaran hadiah;
+
+stop
+@enduml

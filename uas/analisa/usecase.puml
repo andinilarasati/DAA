@@ -1,0 +1,34 @@
+@startuml
+left to right direction
+
+actor Pengguna as User
+actor Admin as Admin
+
+rectangle "Aplikasi Pengelolaan Sampah" {
+  User --> (Registrasi Akun)
+  User --> (Login Pengguna)
+  User --> (Lihat Dashboard Pengguna)
+  User --> (Laporkan Sampah)
+  User --> (Tukar Poin dengan Hadiah)
+  User --> (Lihat Riwayat Transaksi)
+  User --> (Terima Notifikasi)
+
+  Admin --> (Login Admin)
+  Admin --> (Lihat Dashboard Admin)
+  Admin --> (Verifikasi Laporan Sampah)
+  Admin --> (Kelola Pengguna)
+  Admin --> (Kelola Hadiah)
+  Admin --> (Lihat Laporan Sampah)
+  Admin --> (Terima Notifikasi Admin)
+}
+
+(Registrasi Akun) <.. (Login Pengguna) : <<extend>>
+(Lihat Dashboard Pengguna) <.. (Laporkan Sampah) : <<include>>
+(Lihat Dashboard Pengguna) <.. (Tukar Poin dengan Hadiah) : <<include>>
+(Lihat Dashboard Pengguna) <.. (Lihat Riwayat Transaksi) : <<include>>
+(Lihat Dashboard Admin) <.. (Verifikasi Laporan Sampah) : <<include>>
+(Lihat Dashboard Admin) <.. (Kelola Pengguna) : <<include>>
+(Lihat Dashboard Admin) <.. (Kelola Hadiah) : <<include>>
+(Lihat Dashboard Admin) <.. (Lihat Laporan Sampah) : <<include>>
+
+@enduml

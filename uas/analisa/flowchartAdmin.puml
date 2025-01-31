@@ -1,0 +1,46 @@
+@startuml
+start
+
+:Login Admin;
+if (Apakah login berhasil?) then (Ya)
+  :Dashboard Admin;
+  :Admin melihat:
+  - Jumlah total sampah yang dilaporkan.
+  - Jumlah total poin yang diberikan.
+  - Daftar hadiah dan pengguna yang menukarkan poin.;
+
+  :Verifikasi Laporan Sampah;
+  if (Apakah laporan valid?) then (Ya)
+    :Berikan poin kepada pengguna;
+  else (Tidak)
+    :Tolak laporan;
+  endif
+
+  :Manajemen Pengguna;
+  :Admin dapat:
+  - Menambah, menghapus, atau memblokir pengguna.
+  - Melihat statistik pengguna (poin, partisipasi).;
+
+  :Manajemen Hadiah;
+  :Admin dapat:
+  - Menambah, mengubah, atau menghapus hadiah.
+  - Mengatur jumlah poin yang diperlukan untuk hadiah.;
+
+  :Pengelolaan Laporan;
+  :Admin dapat:
+  - Melihat daftar laporan sampah.
+  - Memantau proses verifikasi sampah.;
+
+  :Notifikasi Admin;
+  :Admin menerima notifikasi:
+  - Laporan yang perlu diverifikasi.
+  - Aktivitas pengguna.;
+
+else (Tidak)
+  :Login gagal;
+  stop
+endif
+
+stop
+
+@enduml

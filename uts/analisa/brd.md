@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 Berikut adalah contoh BRD (Business Requirement Document) untuk sistem **Beasiswa Pertukaran Pelajar** dengan fitur utama terbatas pada pendaftaran peserta dan penerimaan beasiswa, sesuai urutan yang Anda minta:
+=======
+>>>>>>> fresh from the oven
 
 ---
 
